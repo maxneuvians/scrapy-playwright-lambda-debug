@@ -5,7 +5,7 @@ from scrapy.crawler import CrawlerProcess
 args = [
         '--no-sandbox',
         '--disable-setuid-sandbox',
-        #'--single-process',
+        '--single-process',
         '--no-zygote'
     ]
 

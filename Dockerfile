@@ -42,12 +42,12 @@ ENV PLAYWRIGHT_BROWSERS_PATH=/pymodules/playwright
 COPY ./requirements_playwright.txt ${FUNCTION_DIR}
 
 RUN python3.9 -m pip install -r ${FUNCTION_DIR}/requirements_playwright.txt
-RUN playwright install chromium
 
 COPY ./requirements.txt ${FUNCTION_DIR}
 
 RUN python3.9 -m pip install -r ${FUNCTION_DIR}/requirements.txt --target /pymodules
 
+RUN playwright install chromium
 
 # Install the runtime interface client
 RUN pip install --target /pymodules \
